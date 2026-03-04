@@ -169,6 +169,9 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 - **API URL**: https://medscheduler-34.preview.emergentagent.com
 
 ## Key Files
+- `/app/frontend/src/contexts/LocalizationContext.jsx` - Global localization context
+- `/app/frontend/src/config/countryConfig.js` - Country-to-value mapping
+- `/app/frontend/src/components/CountrySelector.jsx` - Country selection dropdown
 - `/app/frontend/src/components/ProviderLogin.jsx` - Provider login page
 - `/app/frontend/src/components/ClientLogin.jsx` - Client login page
 - `/app/frontend/src/components/ProviderRegister.jsx` - Provider registration
