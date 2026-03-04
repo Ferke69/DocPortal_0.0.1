@@ -9,17 +9,17 @@ import { Button } from './ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { useAuth } from '../contexts/AuthContext';
+import { useLocalization } from '../contexts/LocalizationContext';
 import { clientApi, billingApi, messagesApi } from '../services/api';
 import ThemeToggle from './ThemeToggle';
-import LanguageSelector from './LanguageSelector';
-import { useCurrency } from './CurrencySelector';
+import CountrySelector from './CountrySelector';
 
 const ClientPortal = ({ onNavigate }) => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   
-  // Use shared currency hook
-  const { symbol: currencySymbol } = useCurrency();
+  // Use localization context for currency
+  const { currencySymbol } = useLocalization();
   
   // Dashboard data
   const [stats, setStats] = useState({
