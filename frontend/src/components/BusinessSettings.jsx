@@ -538,7 +538,7 @@ const BusinessSettings = ({ showHeader = true }) => {
         </CardContent>
       </Card>
 
-      {/* Info Box */}
+      {/* Info Box - Dynamic EU Invoice Requirements */}
       <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
         <h4 className="font-medium text-blue-900 dark:text-blue-200 mb-2 flex items-center">
           <CheckCircle className="h-4 w-4 mr-2" />
@@ -552,6 +552,33 @@ const BusinessSettings = ({ showHeader = true }) => {
           <li>• Invoice must show net amount, VAT amount, and gross total</li>
         </ul>
       </div>
+
+      {/* Country-Specific Compliance Notes */}
+      {getCountryConfig().invoiceRequirements && (
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mt-4">
+          <h4 className="font-medium text-amber-900 dark:text-amber-200 mb-2 flex items-center">
+            <AlertCircle className="h-4 w-4 mr-2" />
+            {getCountryConfig().name} - Specific Compliance Notes
+          </h4>
+          <ul className="text-sm text-amber-800 dark:text-amber-300 space-y-1">
+            {getCountryConfig().invoiceRequirements.notes.map((note, idx) => (
+              <li key={idx}>• {note}</li>
+            ))}
+          </ul>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {getCountryConfig().invoiceRequirements.electronicInvoicing && (
+              <span className="px-2 py-1 bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 text-xs rounded-full">
+                E-Invoicing Required
+              </span>
+            )}
+            {getCountryConfig().invoiceRequirements.reverseCharge && (
+              <span className="px-2 py-1 bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 text-xs rounded-full">
+                Reverse Charge Available
+              </span>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
