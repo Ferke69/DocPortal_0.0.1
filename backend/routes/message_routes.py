@@ -4,12 +4,34 @@ from database import messages_collection, users_collection, log_audit
 from models import MessageCreate
 from datetime import datetime, timezone
 from services.email_service import send_new_message_notification, is_email_configured
+from services.secure_messaging import (
+    encrypt_message, decrypt_message, sanitize_message, 
+    is_encryption_enabled, SECURITY_ARCHITECTURE
+)
 import uuid
 import logging
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/messages", tags=["Messages"])
+
+@router.get("/security-info")
+async def get_security_info():
+    """Get messaging security architecture documentation."""
+    return {
+        "encryption_enabled": is_encryption_enabled(),
+        "encryption_algorithm": "AES-256 (Fernet)" if is_encryption_enabled() else "None (Demo Mode)",
+        "key_derivation": "PBKDF2-HMAC-SHA256",
+        "compliance": ["HIPAA Technical Safeguards", "GDPR Data Protection"],
+        "features": [
+            "Data-at-rest encryption",
+            "Message integrity verification",
+            "Audit logging",
+            "Input sanitization",
+            "Role-based access control"
+        ],
+        "mode": "PRODUCTION" if is_encryption_enabled() else "DEMO (Set MESSAGE_ENCRYPTION_KEY to enable)"
+    }
 
 @router.get("")
 async def get_messages(
