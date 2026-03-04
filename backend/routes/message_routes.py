@@ -59,6 +59,14 @@ async def get_messages(
         {"_id": 0}
     ).sort("timestamp", 1).to_list(None)
     
+    # Decrypt messages for display
+    for msg in messages:
+        if msg.get("encrypted") and msg.get("message"):
+            msg["message"] = decrypt_message(
+                msg["message"], 
+                msg.get("messageHash")
+            )
+    
     return messages
 
 @router.post("")
