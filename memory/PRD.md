@@ -62,6 +62,28 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 - **Integration**: Full doctor-centric auth flow working end-to-end
 
 ## Recent Updates (Dec 2025)
+### System Refinement Update (Mar 2026)
+- **UI Cleanup**:
+  - Removed redundant "Invite Client" button from Provider Dashboard header (still in Clients tab)
+  - Removed 3 footer navigation buttons from Client Portal (Book, Message, Profile)
+- **EU Billing Compliance**:
+  - Added country-specific invoice requirements with mandatory fields
+  - E-Invoicing badges for France, Italy, Spain, Portugal
+  - Reverse Charge indicators for DE, FR, ES, IT, NL
+  - Compliance notes for each country's regulations
+- **Secure Messaging Architecture**:
+  - AES-256 encryption (Fernet) for data-at-rest
+  - PBKDF2-HMAC-SHA256 key derivation (480,000 iterations)
+  - Message integrity verification with SHA-256 hashes
+  - Input sanitization to prevent injection attacks
+  - `/api/messages/security-info` endpoint for status
+- **Language Persistence Fix**:
+  - CountrySelector now used consistently across all panels
+  - Country selection persists to localStorage
+  - Language auto-updates when country changes
+- **Appointment Visibility**:
+  - Doctors can now see all booked appointments including "pending_payment" status
+
 ### Global Localization Engine (Mar 2026)
 - **Country Selector**: Unified country selection component replacing LanguageSelector
 - **Country-to-Value Mapping**: 8 EU countries with currency, language, VAT rates
