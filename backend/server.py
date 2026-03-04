@@ -25,7 +25,7 @@ from routes.invoice_pdf_routes import router as invoice_pdf_router
 from database import init_db
 
 # Import reminder scheduler
-from services.reminder_scheduler import start_reminder_scheduler
+from services.reminder_scheduler import start_reminder_scheduler, check_and_send_reminders, get_scheduler_status
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -62,6 +62,17 @@ async def health_check():
         "database": "connected",
         "timestamp": datetime.utcnow().isoformat()
     }
+
+@api_router.get("/scheduler/status")
+async def scheduler_status():
+    """Get the status of the appointment reminder scheduler."""
+    return await get_scheduler_status()
+
+@api_router.post("/scheduler/trigger")
+async def trigger_reminders():
+    """Manually trigger the reminder check (for testing)."""
+    result = await check_and_send_reminders()
+    return result
 
 # Include all route modules
 api_router.include_router(auth_router)
