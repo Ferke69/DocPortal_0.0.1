@@ -205,7 +205,7 @@ const ClientPortal = ({ onNavigate }) => {
             <div className="flex items-center space-x-2 sm:space-x-3">
               <ThemeToggle />
               <div className="hidden sm:block">
-                <LanguageSelector />
+                <CountrySelector />
               </div>
               <Avatar 
                 className="cursor-pointer h-8 w-8 sm:h-9 sm:w-9" 
