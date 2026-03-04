@@ -80,18 +80,26 @@ async def send_message(
     # Create message
     message_dict = message.model_dump()
     message_id = str(uuid.uuid4())
+    
+    # Sanitize and encrypt message content for security
+    sanitized_content = sanitize_message(message.message)
+    encrypted_content, integrity_hash = encrypt_message(sanitized_content)
+    
     message_dict.update({
         "_id": message_id,
+        "message": encrypted_content,
+        "messageHash": integrity_hash,
+        "encrypted": is_encryption_enabled(),
         "read": False,
         "timestamp": datetime.now(timezone.utc),
         "createdAt": datetime.now(timezone.utc)
     })
     
-    # In production, encrypt the message here
-    # message_dict["message"] = encrypt_message(message_dict["message"])
-    
     await messages_collection.insert_one(message_dict)
-    await log_audit(current_user["userId"], "create", "message", message_id)
+    await log_audit(current_user["userId"], "create", "message", message_id, {
+        "receiverId": message.receiverId,
+        "encrypted": is_encryption_enabled()
+    })
     
     # Send email notification if client is sending to provider
     if message.senderType == 'client' and is_email_configured():
