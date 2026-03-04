@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Calendar, Shield, Video, Clock, Users, CheckCircle, ArrowRight, Stethoscope, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import LanguageSelector from './LanguageSelector';
+import CountrySelector from './CountrySelector';
 import ThemeToggle from './ThemeToggle';
 
 const LandingPage = () => {
@@ -20,7 +20,7 @@ const LandingPage = () => {
             <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">DocPortal</div>
             <div className="flex items-center space-x-2">
               <ThemeToggle />
-              <LanguageSelector />
+              <CountrySelector />
               <Button 
                 variant="outline" 
                 onClick={() => navigate('/provider/login')}
