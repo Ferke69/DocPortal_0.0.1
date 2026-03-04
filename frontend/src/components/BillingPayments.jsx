@@ -5,13 +5,16 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { useAuth } from '../contexts/AuthContext';
+import { useLocalization } from '../contexts/LocalizationContext';
 import { billingApi, invoicePdfApi } from '../services/api';
 import { toast } from '../hooks/use-toast';
 import ThemeToggle from './ThemeToggle';
+import CountrySelector from './CountrySelector';
 import RefundRequestModal from './RefundRequestModal';
 
 const BillingPayments = ({ userType, userId, onBack }) => {
   const { user } = useAuth();
+  const { formatPrice, currencySymbol } = useLocalization();
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
   const [invoices, setInvoices] = useState([]);
