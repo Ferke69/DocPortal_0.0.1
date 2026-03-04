@@ -135,7 +135,7 @@ const ClientProfile = ({ onBack }) => {
             </div>
             <div className="flex items-center space-x-2">
               <ThemeToggle />
-              <LanguageSelector />
+              <CountrySelector />
             </div>
           </div>
         </div>
