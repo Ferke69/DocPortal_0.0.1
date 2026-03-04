@@ -202,7 +202,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
               <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Paid</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-green-600">${totalPaid.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-green-600">{formatPrice(totalPaid)}</div>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
                 {invoices.filter(inv => inv.status === 'paid').length} paid invoices
               </p>
@@ -214,7 +214,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
               <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">Pending Payments</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-yellow-600">${totalPending.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-yellow-600">{formatPrice(totalPending)}</div>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
                 {invoices.filter(inv => inv.status === 'pending').length} pending invoices
               </p>
@@ -226,7 +226,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
               <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">Overdue</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-red-600">${totalOverdue.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-red-600">{formatPrice(totalOverdue)}</div>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
                 {invoices.filter(inv => inv.status === 'overdue').length} overdue invoices
               </p>
@@ -260,7 +260,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-gray-900 dark:text-white">${invoice.amount}</div>
+                        <div className="text-2xl font-bold text-gray-900 dark:text-white">{formatPrice(invoice.amount)}</div>
                         <div className="mt-3 space-y-2">
                           {invoice.status !== 'paid' && userType === 'client' && (
                             <Button 
