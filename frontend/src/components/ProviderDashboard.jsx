@@ -427,19 +427,7 @@ const ProviderDashboard = ({ onNavigate }) => {
             <div className="flex items-center space-x-3">
               <ThemeToggle />
               <CountrySelector />
-              <Button onClick={openInviteModal} className="bg-blue-600 hover:bg-blue-700">
-                <UserPlus className="h-4 w-4 mr-2" />
-                Invite Client
-              </Button>
             </div>
-          </div>
-
-          {/* Mobile Quick Actions */}
-          <div className="lg:hidden mb-6">
-            <Button onClick={openInviteModal} className="w-full bg-blue-600 hover:bg-blue-700">
-              <UserPlus className="h-4 w-4 mr-2" />
-              Invite Client
-            </Button>
           </div>
 
           {/* Schedule Settings Tab */}
