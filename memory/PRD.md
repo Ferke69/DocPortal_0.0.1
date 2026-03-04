@@ -62,6 +62,26 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 - **Integration**: Full doctor-centric auth flow working end-to-end
 
 ## Recent Updates (Dec 2025)
+### Global Localization Engine (Mar 2026)
+- **Country Selector**: Unified country selection component replacing LanguageSelector
+- **Country-to-Value Mapping**: 8 EU countries with currency, language, VAT rates
+  - UK: GBP (£), English, 20% VAT
+  - Slovenia: EUR (€), Slovenian, 22% VAT  
+  - Germany: EUR (€), German, 19% VAT
+  - France: EUR (€), French, 20% VAT
+  - Spain: EUR (€), Spanish, 21% VAT
+  - Italy: EUR (€), Italian, 22% VAT
+  - Portugal: EUR (€), Portuguese, 23% VAT
+  - Netherlands: EUR (€), Dutch, 21% VAT
+- **LocalizationContext**: Global context managing country, currency, language
+- **Browser Locale Detection**: Auto-detects default country from browser
+- **Currency Display**: All prices now use localized currency symbols
+- **Dynamic Tax Labels**: Business settings show country-specific tax requirements
+- **Files Added**:
+  - `/app/frontend/src/contexts/LocalizationContext.jsx`
+  - `/app/frontend/src/config/countryConfig.js`
+  - `/app/frontend/src/components/CountrySelector.jsx`
+
 ### Frontend ESLint Issues Fixed
 - **ProviderDashboard.jsx**: Refactored nested `NavItems` component into data-driven `renderNavItems()` function
 - **AppointmentBooking.jsx**: `useEffect` hooks dependency arrays verified as compliant
