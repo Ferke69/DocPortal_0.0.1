@@ -13,13 +13,13 @@ import { Input } from './ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { useAuth } from '../contexts/AuthContext';
+import { useLocalization } from '../contexts/LocalizationContext';
 import { providerApi, messagesApi, billingApi, refundsApi } from '../services/api';
 import ThemeToggle from './ThemeToggle';
-import LanguageSelector from './LanguageSelector';
+import CountrySelector from './CountrySelector';
 import ScheduleSettings from './ScheduleSettings';
 import BusinessSettings from './BusinessSettings';
 import RefundManagement from './RefundManagement';
-import { useCurrency } from './CurrencySelector';
 import PendingItemsWidget from './PendingItemsWidget';
 import api from '../services/api';
 
@@ -27,8 +27,8 @@ const ProviderDashboard = ({ onNavigate }) => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   
-  // Use shared currency hook
-  const { symbol: currencySymbol } = useCurrency();
+  // Use localization context for currency
+  const { currencySymbol } = useLocalization();
   
   // Dashboard data states
   const [stats, setStats] = useState({
@@ -426,7 +426,7 @@ const ProviderDashboard = ({ onNavigate }) => {
             </div>
             <div className="flex items-center space-x-3">
               <ThemeToggle />
-              <LanguageSelector />
+              <CountrySelector />
               <Button onClick={openInviteModal} className="bg-blue-600 hover:bg-blue-700">
                 <UserPlus className="h-4 w-4 mr-2" />
                 Invite Client
