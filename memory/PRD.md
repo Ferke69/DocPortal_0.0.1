@@ -83,6 +83,15 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
   - Language auto-updates when country changes
 - **Appointment Visibility**:
   - Doctors can now see all booked appointments including "pending_payment" status
+- **Appointment Reminder Scheduler** (VERIFIED):
+  - Background scheduler runs every hour
+  - Checks for appointments 24 hours in advance
+  - Sends reminder emails (MOCKED - console log in demo mode)
+  - `/api/scheduler/status` - check scheduler status
+  - `/api/scheduler/trigger` - manually trigger reminders
+- **i18n Translations Complete**:
+  - Added business/security keys for all 8 languages
+  - Full translations: EN, SL, DE, FR, ES, IT, PT, NL
 
 ### Global Localization Engine (Mar 2026)
 - **Country Selector**: Unified country selection component replacing LanguageSelector
