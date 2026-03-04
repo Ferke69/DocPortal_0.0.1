@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, User, Mail, Phone, Calendar, MapPin, Shield, Camera, Save, Lock, Heart } from 'lucide-react';
+import { ArrowLeft, User, Mail, Phone, Calendar, MapPin, Shield, Camera, Save, Lock, Heart, Globe } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { useAuth } from '../contexts/AuthContext';
+import { useLocalization } from '../contexts/LocalizationContext';
 import { toast } from '../hooks/use-toast';
 import api from '../services/api';
 import ThemeToggle from './ThemeToggle';
-import LanguageSelector from './LanguageSelector';
-import CurrencySelector from './CurrencySelector';
+import CountrySelector from './CountrySelector';
 
 const ClientProfile = ({ onBack }) => {
   const { t } = useTranslation();
