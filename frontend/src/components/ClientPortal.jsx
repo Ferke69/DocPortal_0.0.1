@@ -524,34 +524,6 @@ const ClientPortal = ({ onNavigate }) => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Quick Actions Footer - Desktop */}
-        <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-8">
-          <Button 
-            variant="outline" 
-            className="py-6 dark:border-gray-600 dark:text-gray-300"
-            onClick={() => onNavigate('book-appointment')}
-          >
-            <Calendar className="h-5 w-5 mr-2" />
-            Book Appointment
-          </Button>
-          <Button 
-            variant="outline" 
-            className="py-6 dark:border-gray-600 dark:text-gray-300"
-            onClick={() => onNavigate('messages')}
-          >
-            <MessageSquare className="h-5 w-5 mr-2" />
-            Send Message
-          </Button>
-          <Button 
-            variant="outline" 
-            className="py-6 dark:border-gray-600 dark:text-gray-300"
-            onClick={() => navigate('/client/profile')}
-          >
-            <Settings className="h-5 w-5 mr-2" />
-            My Profile
-          </Button>
-        </div>
       </main>
     </div>
   );
