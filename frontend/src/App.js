@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LocalizationProvider } from './contexts/LocalizationContext';
 import { Toaster } from './components/ui/toaster';
 import SessionTimeoutWrapper from './components/SessionTimeoutWrapper';
 
@@ -232,16 +233,18 @@ function AppRoutes() {
 function App() {
   return (
     <ThemeProvider>
-      <AuthProvider>
-        <BrowserRouter>
-          <SessionTimeoutWrapper>
-            <div className="App">
-              <AppRouter />
-              <Toaster />
-            </div>
-          </SessionTimeoutWrapper>
-        </BrowserRouter>
-      </AuthProvider>
+      <LocalizationProvider>
+        <AuthProvider>
+          <BrowserRouter>
+            <SessionTimeoutWrapper>
+              <div className="App">
+                <AppRouter />
+                <Toaster />
+              </div>
+            </SessionTimeoutWrapper>
+          </BrowserRouter>
+        </AuthProvider>
+      </LocalizationProvider>
     </ThemeProvider>
   );
 }
