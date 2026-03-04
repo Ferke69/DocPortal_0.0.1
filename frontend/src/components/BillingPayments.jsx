@@ -318,7 +318,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
                   <form onSubmit={handlePayment} className="space-y-4">
                     <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg mb-4">
                       <div className="text-sm text-gray-600 dark:text-gray-400">Amount to Pay</div>
-                      <div className="text-2xl font-bold text-blue-900 dark:text-blue-200">${selectedInvoice.amount}</div>
+                      <div className="text-2xl font-bold text-blue-900 dark:text-blue-200">{formatPrice(selectedInvoice.amount)}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{selectedInvoice.description}</div>
                     </div>
 
@@ -401,7 +401,7 @@ const BillingPayments = ({ userType, userId, onBack }) => {
                       disabled={processing}
                     >
                       <CreditCard className="h-5 w-5 mr-2" />
-                      {processing ? 'Processing...' : `Pay $${selectedInvoice.amount}`}
+                      {processing ? 'Processing...' : `Pay ${formatPrice(selectedInvoice.amount)}`}
                     </Button>
 
                     <Button 
