@@ -152,10 +152,10 @@ async def get_dashboard(current_user: dict = Depends(get_current_provider)):
     monthly_invoices = [inv for inv in paid_invoices if datetime.fromisoformat(inv["date"]).month == current_month]
     monthly_income = sum(inv["amount"] for inv in monthly_invoices)
     
-    # Upcoming appointments
+    # Upcoming appointments (include pending_payment so doctors can see all booked appointments)
     upcoming = await appointments_collection.count_documents({
         "providerId": provider_id,
-        "status": {"$in": ["confirmed", "pending"]}
+        "status": {"$in": ["confirmed", "pending", "pending_payment"]}
     })
     
     return ProviderDashboardStats(
