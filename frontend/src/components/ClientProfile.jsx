@@ -417,30 +417,18 @@ const ClientProfile = ({ onBack }) => {
 
             <Card className="dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="text-gray-900 dark:text-white">{t('profile.language')}</CardTitle>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <Globe className="h-5 w-5 mr-2 text-blue-600" />
+                  {t('profile.language')} & {t('profile.currency')}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white">{t('profile.displayLanguage')}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{t('profile.displayLanguageDesc')}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Select your country to set language and currency</p>
                   </div>
-                  <LanguageSelector />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="dark:bg-gray-800 dark:border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-gray-900 dark:text-white">{t('profile.currency')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium text-gray-900 dark:text-white">{t('profile.displayCurrency')}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{t('profile.displayCurrencyDesc')}</p>
-                  </div>
-                  <CurrencySelector />
+                  <CountrySelector />
                 </div>
               </CardContent>
             </Card>
