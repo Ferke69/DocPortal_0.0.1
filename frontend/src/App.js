@@ -22,6 +22,8 @@ import AppointmentBooking from './components/AppointmentBooking';
 import BillingPayments from './components/BillingPayments';
 import ProviderProfile from './components/ProviderProfile';
 import ClientProfile from './components/ClientProfile';
+import TermsOfService from './components/TermsOfService';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 // Keep old Login/Register for backward compatibility during transition
 import Login from './components/Login';
