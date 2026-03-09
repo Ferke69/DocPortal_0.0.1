@@ -88,6 +88,8 @@ api_router.include_router(pending_items_router)
 api_router.include_router(provider_settings_router)
 api_router.include_router(refund_router)
 api_router.include_router(invoice_pdf_router)
+api_router.include_router(gdpr_router)
+api_router.include_router(video_router)
 
 # Include the router in the main app
 app.include_router(api_router)
