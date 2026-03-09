@@ -196,6 +196,17 @@ const ClientProfile = ({ onBack }) => {
           >
             {t('profile.settings')}
           </button>
+          <button
+            onClick={() => setActiveTab('privacy')}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              activeTab === 'privacy'
+                ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+            }`}
+          >
+            <Database className="h-4 w-4 inline mr-1" />
+            Data & Privacy
+          </button>
         </div>
 
         {/* Profile Tab */}
