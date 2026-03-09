@@ -10,8 +10,8 @@ import json
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 
-# Test credentials
-CLIENT_EMAIL = "testclient_1769486748@example.com"
+# Test credentials (from previous iteration)
+CLIENT_EMAIL = "testclient_refinement@example.com"
 CLIENT_PASSWORD = "TestPass123!"
 
 
