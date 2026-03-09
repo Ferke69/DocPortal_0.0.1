@@ -63,6 +63,23 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 
 ## Recent Updates (Dec 2025)
 ### System Refinement Update (Mar 2026)
+- **Legal Pages**:
+  - Terms of Service page at `/terms`
+  - Privacy Policy page at `/privacy` (GDPR compliant)
+  - Footer links updated on Landing page
+- **Video Consultation (Jitsi Meet)**:
+  - Free video conferencing via Jitsi Meet (no API key needed)
+  - Deterministic room IDs (same appointment = same link)
+  - Providers can manually add Google Meet/Zoom/Teams links
+  - `/api/video/providers` - list supported providers
+  - `/api/video/generate/{appointment_id}` - generate meeting link
+- **GDPR Compliance**:
+  - Data Export: Download all personal data as JSON
+  - Account Deletion: Request account deletion (30-day process)
+  - Data & Privacy tab in Client Profile
+  - `/api/gdpr/export-data` - export all user data
+  - `/api/gdpr/delete-request` - request account deletion
+  - `/api/gdpr/deletion-status` - check deletion status
 - **UI Cleanup**:
   - Removed redundant "Invite Client" button from Provider Dashboard header (still in Clients tab)
   - Removed 3 footer navigation buttons from Client Portal (Book, Message, Profile)
