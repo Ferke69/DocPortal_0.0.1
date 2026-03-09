@@ -231,6 +231,7 @@ function AppRoutes() {
       {/* Legal Pages - Public */}
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/cookies" element={<CookiePolicy />} />
 
       {/* Catch all */}
       <Route path="*" element={<Navigate to="/" replace />} />
@@ -248,6 +249,7 @@ function App() {
               <div className="App">
                 <AppRouter />
                 <Toaster />
+                <CookieConsent />
               </div>
             </SessionTimeoutWrapper>
           </BrowserRouter>
