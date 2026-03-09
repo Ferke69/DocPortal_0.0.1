@@ -1,0 +1,31 @@
+{
+  "export_info": {
+    "exported_at": "2026-03-09T22:45:11.450957+00:00",
+    "user_id": "user_640a77c2d89f",
+    "user_role": "client",
+    "data_controller": "DocPortal",
+    "contact": "privacy@docportal.com"
+  },
+  "profile": {
+    "email": "testclient_refinement@example.com",
+    "name": "Test Client Refinement",
+    "phone": null,
+    "avatar": null,
+    "userType": "client",
+    "specialty": null,
+    "license": null,
+    "bio": null,
+    "hourlyRate": null,
+    "dateOfBirth": null,
+    "address": null,
+    "insurance": null,
+    "providerId": "user_8ce9988aa53c",
+    "emergencyContact": null,
+    "user_id": "user_640a77c2d89f",
+    "createdAt": "2026-03-04T17:41:00.091000",
+    "updatedAt": "2026-03-04T17:41:00.091000"
+  },
+  "appointments": [],
+  "messages": [],
+  "invoices": []
+}
