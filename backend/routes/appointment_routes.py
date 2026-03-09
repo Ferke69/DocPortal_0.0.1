@@ -2,22 +2,11 @@ from fastapi import APIRouter, HTTPException, Depends
 from auth import get_current_user
 from database import appointments_collection, users_collection, log_audit
 from models import AppointmentCreate, AppointmentUpdate
+from services.video_service import create_video_consultation
 from datetime import datetime, timezone, date
 import uuid
-import secrets
 
 router = APIRouter(prefix="/appointments", tags=["Appointments"])
-
-def generate_google_meet_link():
-    """Generate a unique Google Meet-style link
-    In production, you would integrate with Google Calendar API or Google Meet API
-    For now, we'll create a placeholder structure
-    """
-    # Format: meet.google.com/xxx-yyyy-zzz
-    code1 = secrets.token_urlsafe(3)[:3]
-    code2 = secrets.token_urlsafe(4)[:4]
-    code3 = secrets.token_urlsafe(3)[:3]
-    return f"https://meet.google.com/{code1}-{code2}-{code3}"
 
 @router.post("")
 async def create_appointment(
@@ -34,10 +23,7 @@ async def create_appointment(
     if not provider or provider["userType"] != "provider":
         raise HTTPException(status_code=404, detail="Provider not found")
     
-    # Generate Google Meet link
-    video_link = generate_google_meet_link()
-    
-    # Create appointment
+    # Create appointment first to get ID
     appointment_dict = appointment.model_dump()
     appointment_id = str(uuid.uuid4())
     
@@ -45,10 +31,20 @@ async def create_appointment(
     if isinstance(appointment_dict.get("date"), date):
         appointment_dict["date"] = appointment_dict["date"].isoformat()
     
+    # Generate video link using the video service
+    video_link = create_video_consultation({
+        "id": appointment_id,
+        "providerId": appointment.providerId,
+        "date": appointment_dict["date"],
+        "type": appointment_dict.get("type", "")
+    })
+    
     appointment_dict.update({
         "_id": appointment_id,
+        "id": appointment_id,
         "status": "pending",
         "videoLink": video_link,
+        "videoProvider": "jitsi",
         "createdAt": datetime.now(timezone.utc),
         "updatedAt": datetime.now(timezone.utc)
     })
