@@ -314,11 +314,12 @@ const LandingPage = () => {
             <div className="text-2xl font-bold text-white mb-4">DocPortal</div>
             <p className="mb-4">{t('landing.footer')}</p>
             <div className="flex justify-center space-x-6 text-sm">
-              <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors duration-200">Contact</a>
+              <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
+              <a href="/terms" className="hover:text-white transition-colors duration-200">Terms of Service</a>
+              <a href="mailto:support@docportal.com" className="hover:text-white transition-colors duration-200">Contact</a>
             </div>
-            <p className="mt-6 text-sm">© 2025 DocPortal. All rights reserved.</p>
+            <p className="mt-4 text-xs text-gray-500">🇪🇺 GDPR Compliant | Your data is protected</p>
+            <p className="mt-2 text-sm">© 2025 DocPortal. All rights reserved.</p>
           </div>
         </div>
       </footer>
