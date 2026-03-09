@@ -226,6 +226,10 @@ function AppRoutes() {
         } 
       />
 
+      {/* Legal Pages - Public */}
+      <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+
       {/* Catch all */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
