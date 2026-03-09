@@ -231,16 +231,23 @@ async def get_deletion_status(current_user: dict = Depends(get_current_user)):
     """Check if account has a pending deletion request"""
     user_id = current_user["userId"]
     
+    # First check if user exists (without projection to avoid empty dict issue)
+    user_exists = await users_collection.find_one(
+        {"user_id": user_id},
+        {"_id": 0, "user_id": 1}
+    )
+    
+    if not user_exists:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    # Get deletion-related fields
     user = await users_collection.find_one(
         {"user_id": user_id},
         {"_id": 0, "deletionRequested": 1, "deletionRequestedAt": 1, "status": 1}
     )
     
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-    
     return {
-        "deletion_requested": user.get("deletionRequested", False),
-        "deletion_requested_at": user.get("deletionRequestedAt"),
-        "status": user.get("status", "active")
+        "deletion_requested": user.get("deletionRequested", False) if user else False,
+        "deletion_requested_at": user.get("deletionRequestedAt") if user else None,
+        "status": user.get("status", "active") if user else "active"
     }
