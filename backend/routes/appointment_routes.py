@@ -155,9 +155,18 @@ async def join_appointment(
     if current_user["userId"] not in [appointment["clientId"], appointment["providerId"]]:
         raise HTTPException(status_code=403, detail="Not authorized")
     
-    # Return video link
+    # Return video link (generate one if missing)
+    video_link = appointment.get("videoLink")
+    if not video_link:
+        video_link = create_video_consultation({
+            "id": appointment_id,
+            "providerId": appointment.get("providerId", ""),
+            "date": appointment.get("date", ""),
+            "type": appointment.get("type", "")
+        })
+    
     return {
-        "videoLink": appointment.get("videoLink", generate_google_meet_link()),
+        "videoLink": video_link,
         "appointmentId": appointment_id,
         "status": appointment["status"]
     }
