@@ -61,7 +61,7 @@ async def export_user_data(current_user: dict = Depends(get_current_user)):
             messages.append(decrypted_msg)
         
         # Get billing/invoices
-        invoices = await billing_collection.find(
+        invoices = await invoices_collection.find(
             {"$or": [{"clientId": user_id}, {"providerId": user_id}]},
             {"_id": 0}
         ).to_list(1000)
