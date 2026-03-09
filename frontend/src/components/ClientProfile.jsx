@@ -446,6 +446,11 @@ const ClientProfile = ({ onBack }) => {
             </Card>
           </div>
         )}
+
+        {/* Data & Privacy Tab */}
+        {activeTab === 'privacy' && (
+          <DataPrivacySettings />
+        )}
       </main>
     </div>
   );
