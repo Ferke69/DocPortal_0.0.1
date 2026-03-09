@@ -7,7 +7,7 @@ from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
 from auth import get_current_user
 from database import (
     users_collection, appointments_collection, messages_collection,
-    billing_collection, provider_settings_collection, log_audit
+    invoices_collection, provider_settings_collection, log_audit
 )
 from services.secure_messaging import decrypt_message
 from services.email_service import send_email, is_email_configured
