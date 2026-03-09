@@ -63,6 +63,13 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 
 ## Recent Updates (Dec 2025)
 ### System Refinement Update (Mar 2026)
+- **Cookie Consent Banner** (EU Compliant):
+  - GDPR & ePrivacy compliant cookie banner
+  - Three cookie categories: Essential (always on), Functional, Analytics
+  - "Accept All", "Essential Only", and "Customize" options
+  - Preferences stored in localStorage
+  - Cookie Policy page at `/cookies`
+  - `useCookieConsent` hook for checking consent
 - **Legal Pages**:
   - Terms of Service page at `/terms`
   - Privacy Policy page at `/privacy` (GDPR compliant)
