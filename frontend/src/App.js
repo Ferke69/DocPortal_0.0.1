@@ -6,6 +6,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { LocalizationProvider } from './contexts/LocalizationContext';
 import { Toaster } from './components/ui/toaster';
 import SessionTimeoutWrapper from './components/SessionTimeoutWrapper';
+import CookieConsent from './components/CookieConsent';
 
 // Import components
 import LandingPage from './components/LandingPage';
@@ -24,6 +25,7 @@ import ProviderProfile from './components/ProviderProfile';
 import ClientProfile from './components/ClientProfile';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import CookiePolicy from './components/CookiePolicy';
 
 // Keep old Login/Register for backward compatibility during transition
 import Login from './components/Login';
