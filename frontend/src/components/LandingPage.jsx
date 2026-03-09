@@ -316,6 +316,7 @@ const LandingPage = () => {
             <div className="flex justify-center space-x-6 text-sm">
               <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
               <a href="/terms" className="hover:text-white transition-colors duration-200">Terms of Service</a>
+              <a href="/cookies" className="hover:text-white transition-colors duration-200">Cookie Policy</a>
               <a href="mailto:support@docportal.com" className="hover:text-white transition-colors duration-200">Contact</a>
             </div>
             <p className="mt-4 text-xs text-gray-500">🇪🇺 GDPR Compliant | Your data is protected</p>
