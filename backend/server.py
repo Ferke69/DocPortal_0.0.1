@@ -20,6 +20,8 @@ from routes.pending_items_routes import router as pending_items_router
 from routes.provider_settings_routes import router as provider_settings_router
 from routes.refund_routes import router as refund_router
 from routes.invoice_pdf_routes import router as invoice_pdf_router
+from routes.gdpr_routes import router as gdpr_router
+from routes.video_routes import router as video_router
 
 # Import database initialization
 from database import init_db
