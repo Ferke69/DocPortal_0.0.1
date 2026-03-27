@@ -247,7 +247,7 @@
     "messagingSecure": "Varno sporočanje",
     "encryptionEnabled": "Šifriranje omogočeno",
     "encryptionDisabled": "Šifriranje onemogočeno (Demo način)",
-    "hipaaCompliant": "Zasnovano za skladnost z HIPAA/GDPR",
+    "gdprCompliant": "GDPR Skladno",
     "dataProtected": "Vaši podatki so zaščiteni",
     "endToEnd": "Šifrirano od konca do konca",
     "auditLogged": "Vsa dejanja so zabeležena za varnost"
