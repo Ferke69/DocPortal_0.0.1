@@ -180,7 +180,7 @@
   },
   "messaging": {
     "title": "Sporočila",
-    "description": "Varno, HIPAA-skladno sporočanje",
+    "description": "Varno, šifrirano sporočanje",
     "conversations": "Pogovori",
     "searchPlaceholder": "Išči pogovore...",
     "selectConversation": "Izberite pogovor",
