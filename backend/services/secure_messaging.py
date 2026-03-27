@@ -1,7 +1,7 @@
 """
 Secure Messaging Service for Psychiatric Data
 Implements encryption for data-at-rest and secure transit compliance.
-Designed with HIPAA/GDPR compliance mindset.
+Designed with GDPR compliance mindset for EU healthcare.
 """
 
 import os
