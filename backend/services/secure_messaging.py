@@ -219,8 +219,8 @@ SECURITY_ARCHITECTURE = """
 - Provider-client relationship verification
 
 ### Compliance Considerations
-- HIPAA: Technical safeguards implemented
 - GDPR: Data minimization, encryption, access controls
+- EU Privacy Standards: Technical safeguards implemented
 - Secure deletion: Messages can be permanently removed
 
 ### Production Deployment Notes
