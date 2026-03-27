@@ -22,7 +22,7 @@ async def get_security_info():
         "encryption_enabled": is_encryption_enabled(),
         "encryption_algorithm": "AES-256 (Fernet)" if is_encryption_enabled() else "None (Demo Mode)",
         "key_derivation": "PBKDF2-HMAC-SHA256",
-        "compliance": ["HIPAA Technical Safeguards", "GDPR Data Protection"],
+        "compliance": ["GDPR Data Protection", "EU Privacy Standards"],
         "features": [
             "Data-at-rest encryption",
             "Message integrity verification",
