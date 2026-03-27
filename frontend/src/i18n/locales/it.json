@@ -25,7 +25,7 @@
     "schedulingDesc": "I clienti prenotano appuntamenti 24/7 con promemoria automatici e sincronizzazione del calendario.",
     "telehealth": "Telemedicina Sicura",
     "telehealthDesc": "Sessioni video conformi HIPAA con accesso con un clic.",
-    "compliance": "Conformità HIPAA",
+    "compliance": "Privacy e Sicurezza",
     "complianceDesc": "Crittografia a livello bancario, registri di audit e archiviazione sicura dei dati.",
     "billing": "Fatturazione Automatizzata",
     "billingDesc": "Pagamenti integrati con Stripe con fatturazione automatica.",
@@ -245,7 +245,7 @@
     "messagingSecure": "Messaggistica sicura",
     "encryptionEnabled": "Crittografia attivata",
     "encryptionDisabled": "Crittografia disattivata (Modalità demo)",
-    "hipaaCompliant": "Progettato per conformità HIPAA/GDPR",
+    "gdprCompliant": "Progettato per conformità GDPR",
     "dataProtected": "I tuoi dati sono protetti",
     "endToEnd": "Crittografia end-to-end",
     "auditLogged": "Tutte le azioni sono registrate"

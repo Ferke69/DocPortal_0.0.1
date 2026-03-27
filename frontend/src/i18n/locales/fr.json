@@ -30,7 +30,7 @@
     "schedulingDesc": "Les clients prennent rendez-vous 24h/24 avec rappels automatiques et synchronisation du calendrier.",
     "telehealth": "Télésanté Sécurisée",
     "telehealthDesc": "Sessions vidéo conformes HIPAA avec accès en un clic. Aucun téléchargement requis pour les clients.",
-    "compliance": "Conformité HIPAA",
+    "compliance": "Confidentialité & Sécurité",
     "complianceDesc": "Cryptage de niveau bancaire, journaux d'audit et stockage sécurisé des données.",
     "billing": "Facturation Automatisée",
     "billingDesc": "Paiements intégrés Stripe avec facturation automatique.",
@@ -256,7 +256,7 @@
     "messagingSecure": "Messagerie sécurisée",
     "encryptionEnabled": "Chiffrement activé",
     "encryptionDisabled": "Chiffrement désactivé (Mode démo)",
-    "hipaaCompliant": "Conçu pour la conformité HIPAA/RGPD",
+    "gdprCompliant": "Conçu pour la conformité HIPAA/RGPD",
     "dataProtected": "Vos données sont protégées",
     "endToEnd": "Chiffré de bout en bout",
     "auditLogged": "Toutes les actions sont journalisées"
