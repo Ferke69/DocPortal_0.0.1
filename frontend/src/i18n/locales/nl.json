@@ -245,7 +245,7 @@
     "messagingSecure": "Veilig berichtenverkeer",
     "encryptionEnabled": "Versleuteling ingeschakeld",
     "encryptionDisabled": "Versleuteling uitgeschakeld (Demo-modus)",
-    "gdprCompliant": "Ontworpen voor HIPAA/AVG-naleving",
+    "gdprCompliant": "Ontworpen voor AVG-naleving",
     "dataProtected": "Uw gegevens zijn beschermd",
     "endToEnd": "End-to-end versleuteld",
     "auditLogged": "Alle acties worden gelogd"

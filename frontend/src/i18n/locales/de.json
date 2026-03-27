@@ -252,7 +252,7 @@
     "messagingSecure": "Sichere Nachrichtenübermittlung",
     "encryptionEnabled": "Verschlüsselung aktiviert",
     "encryptionDisabled": "Verschlüsselung deaktiviert (Demo-Modus)",
-    "gdprCompliant": "Entwickelt für HIPAA/DSGVO-Konformität",
+    "gdprCompliant": "Entwickelt für DSGVO-Konformität",
     "dataProtected": "Ihre Daten sind geschützt",
     "endToEnd": "Ende-zu-Ende verschlüsselt",
     "auditLogged": "Alle Aktionen werden protokolliert"
