@@ -364,7 +364,7 @@
     "messagingSecure": "Secure Messaging",
     "encryptionEnabled": "Encryption Enabled",
     "encryptionDisabled": "Encryption Disabled (Demo Mode)",
-    "hipaaCompliant": "Designed for HIPAA/GDPR Compliance",
+    "gdprCompliant": "GDPR Compliant",
     "dataProtected": "Your data is protected",
     "endToEnd": "End-to-end encrypted",
     "auditLogged": "All actions are logged for security"
