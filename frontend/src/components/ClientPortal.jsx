@@ -13,6 +13,7 @@ import { useLocalization } from '../contexts/LocalizationContext';
 import { clientApi, billingApi, messagesApi } from '../services/api';
 import ThemeToggle from './ThemeToggle';
 import CountrySelector from './CountrySelector';
+import VideoMeetingButton from './VideoMeetingButton';
 
 const ClientPortal = ({ onNavigate }) => {
   const navigate = useNavigate();
