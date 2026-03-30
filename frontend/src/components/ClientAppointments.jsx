@@ -224,7 +224,6 @@ const ClientAppointments = ({ onBack, onBookNew }) => {
                           appointment={apt}
                           showCountdown={true}
                         />
-                        )}
                         
                         <Button
                           variant="outline"
