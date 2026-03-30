@@ -98,8 +98,8 @@ class TestAppointmentVideoLink:
     def test_appointment_creation_generates_video_link(self, client_auth, provider_auth):
         """Test that creating an appointment generates a Jitsi video link"""
         client_token = client_auth["token"]
-        client_id = client_auth["user"]["userId"]
-        provider_id = provider_auth["user"]["userId"]
+        client_id = client_auth["user"]["user_id"]
+        provider_id = provider_auth["user"]["user_id"]
         
         # Create appointment for 5 minutes from now (to test video button)
         now = datetime.now()
@@ -138,8 +138,8 @@ class TestAppointmentVideoLink:
     def test_get_appointment_includes_video_link(self, client_auth, provider_auth):
         """Test that fetching an appointment includes the video link"""
         client_token = client_auth["token"]
-        client_id = client_auth["user"]["userId"]
-        provider_id = provider_auth["user"]["userId"]
+        client_id = client_auth["user"]["user_id"]
+        provider_id = provider_auth["user"]["user_id"]
         
         # First create an appointment
         now = datetime.now()
@@ -182,8 +182,8 @@ class TestAppointmentVideoLink:
     def test_join_appointment_returns_video_link(self, client_auth, provider_auth):
         """Test the join appointment endpoint returns video link"""
         client_token = client_auth["token"]
-        client_id = client_auth["user"]["userId"]
-        provider_id = provider_auth["user"]["userId"]
+        client_id = client_auth["user"]["user_id"]
+        provider_id = provider_auth["user"]["user_id"]
         
         # Create appointment
         now = datetime.now()
@@ -344,8 +344,8 @@ class TestVideoLinkFormat:
     def test_different_appointments_get_different_links(self, client_auth, provider_auth):
         """Test that different appointments get unique video links"""
         client_token = client_auth["token"]
-        client_id = client_auth["user"]["userId"]
-        provider_id = provider_auth["user"]["userId"]
+        client_id = client_auth["user"]["user_id"]
+        provider_id = provider_auth["user"]["user_id"]
         
         headers = {"Authorization": f"Bearer {client_token}"}
         video_links = []
