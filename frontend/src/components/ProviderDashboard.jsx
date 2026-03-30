@@ -526,18 +526,22 @@ const ProviderDashboard = ({ onNavigate }) => {
                       <div className="space-y-3">
                         {todayAppointments.map((apt) => (
                           <div key={apt._id || apt.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                            <div className="flex items-center space-x-3 min-w-0">
+                            <div className="flex items-center space-x-3 min-w-0 flex-1">
                               <Avatar className="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0">
                                 <AvatarImage src={getClientAvatar(apt.clientId)} />
                                 <AvatarFallback className="text-xs">{getInitials(getClientName(apt.clientId))}</AvatarFallback>
                               </Avatar>
                               <div className="min-w-0">
                                 <p className="font-medium text-gray-900 dark:text-white text-sm truncate">{getClientName(apt.clientId)}</p>
-                                <p className="text-xs text-gray-500 dark:text-gray-400">{apt.type}</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">{apt.time} • {apt.type}</p>
                               </div>
                             </div>
-                            <div className="text-right flex-shrink-0 ml-2">
-                              <p className="font-medium text-gray-900 dark:text-white text-sm">{apt.time}</p>
+                            <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                              <VideoMeetingButton 
+                                appointment={apt} 
+                                size="sm"
+                                showCountdown={true}
+                              />
                             </div>
                           </div>
                         ))}
