@@ -381,25 +381,27 @@ const ClientPortal = ({ onNavigate }) => {
                         <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                           {apt.date} at {apt.time}
                         </p>
+                        {apt.videoLink && (
+                          <p className="text-xs text-green-600 dark:text-green-400 flex items-center mt-1">
+                            <Video className="h-3 w-3 mr-1" />
+                            Video consultation
+                          </p>
+                        )}
                       </div>
                     </div>
                     <div className="flex items-center justify-between sm:justify-end space-x-2">
-                      {apt.status === 'confirmed' && apt.videoLink ? (
-                        <Button 
-                          size="sm" 
-                          className="bg-blue-600 hover:bg-blue-700"
-                          onClick={() => window.open(apt.videoLink, '_blank')}
-                        >
-                          <Video className="h-4 w-4 sm:mr-1" />
-                          <span className="hidden sm:inline">Join</span>
-                        </Button>
-                      ) : (
+                      <VideoMeetingButton 
+                        appointment={apt}
+                        size="sm"
+                        showCountdown={true}
+                      />
+                      {!['confirmed', 'pending'].includes(apt.status) && (
                         <Badge variant="outline" className={
-                          apt.status === 'confirmed' 
-                            ? 'text-green-600 border-green-600' 
-                            : 'text-orange-600 border-orange-600'
+                          apt.status === 'pending_payment' 
+                            ? 'text-orange-600 border-orange-600' 
+                            : 'text-gray-600 border-gray-600'
                         }>
-                          {apt.status}
+                          {apt.status === 'pending_payment' ? 'Awaiting Payment' : apt.status}
                         </Badge>
                       )}
                     </div>
