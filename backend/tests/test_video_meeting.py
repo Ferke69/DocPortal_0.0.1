@@ -14,10 +14,10 @@ from datetime import datetime, timedelta
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 
-# Test credentials from review request
-PROVIDER_EMAIL = "testprovider_1769486748@example.com"
+# Test credentials - using existing test accounts
+PROVIDER_EMAIL = "testprovider_refinement@example.com"
 PROVIDER_PASSWORD = "TestPass123!"
-CLIENT_EMAIL = "testclient_1769486748@example.com"
+CLIENT_EMAIL = "testclient_refinement@example.com"
 CLIENT_PASSWORD = "TestPass123!"
 
 
