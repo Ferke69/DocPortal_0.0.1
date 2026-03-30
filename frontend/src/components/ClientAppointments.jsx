@@ -220,14 +220,10 @@ const ClientAppointments = ({ onBack, onBookNew }) => {
 
                       {/* Actions */}
                       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-                        {apt.status === 'confirmed' && apt.videoLink && (
-                          <Button 
-                            className="bg-blue-600 hover:bg-blue-700"
-                            onClick={() => window.open(apt.videoLink, '_blank')}
-                          >
-                            <Video className="h-4 w-4 mr-2" />
-                            Join Video
-                          </Button>
+                        <VideoMeetingButton 
+                          appointment={apt}
+                          showCountdown={true}
+                        />
                         )}
                         
                         <Button
