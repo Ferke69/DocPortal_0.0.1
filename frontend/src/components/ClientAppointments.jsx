@@ -6,6 +6,7 @@ import { Badge } from './ui/badge';
 import { clientApi, appointmentsApi, refundsApi } from '../services/api';
 import { toast } from '../hooks/use-toast';
 import RefundRequestModal from './RefundRequestModal';
+import VideoMeetingButton from './VideoMeetingButton';
 
 const ClientAppointments = ({ onBack, onBookNew }) => {
   const [appointments, setAppointments] = useState([]);
