@@ -366,7 +366,8 @@ class TestVideoLinkFormat:
                 "date": appointment_date,
                 "time": appointment_time_str,
                 "type": f"Test Appointment {i+1}",
-                "duration": 30
+                "duration": 30,
+                "amount": 50.0
             }
             
             response = requests.post(
