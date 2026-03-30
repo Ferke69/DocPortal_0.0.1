@@ -21,6 +21,7 @@ import ScheduleSettings from './ScheduleSettings';
 import BusinessSettings from './BusinessSettings';
 import RefundManagement from './RefundManagement';
 import PendingItemsWidget from './PendingItemsWidget';
+import VideoMeetingButton from './VideoMeetingButton';
 import api from '../services/api';
 
 const ProviderDashboard = ({ onNavigate }) => {
