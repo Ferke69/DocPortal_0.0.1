@@ -200,7 +200,8 @@ class TestAppointmentVideoLink:
             "date": appointment_date,
             "time": appointment_time_str,
             "type": "Initial Consultation",
-            "duration": 45
+            "duration": 45,
+            "amount": 75.0
         }
         
         create_response = requests.post(
