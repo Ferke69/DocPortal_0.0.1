@@ -115,6 +115,7 @@ class TestAppointmentVideoLink:
             "time": appointment_time_str,
             "type": "Video Consultation",
             "duration": 30,
+            "amount": 50.0,
             "notes": "Test appointment for video meeting"
         }
         
