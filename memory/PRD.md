@@ -221,7 +221,7 @@ Build a clone of SimplePractice (practice management platform for healthcare pro
 ## Test Credentials
 - **Provider**: testprovider_xxx@example.com / TestPass123!
 - **Client**: testclient_xxx@example.com / TestPass123!
-- **API URL**: https://medscheduler-34.preview.emergentagent.com
+- **API URL**: https://doc-portal-eu.preview.emergentagent.com
 
 ## Key Files
 - `/app/frontend/src/contexts/LocalizationContext.jsx` - Global localization context
